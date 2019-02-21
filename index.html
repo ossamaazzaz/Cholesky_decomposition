@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Méthode De Cholesky</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- main style sheet -->
+  <link rel="stylesheet" href="css/style.css">  
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+
+<body>
+	<header>
+		<h1>Méthode De Cholesky</h1>
+	</header>
+	<main>
+		<div id="step1" class="step">
+			<p>Notre application résoudre des system de type :<br>A.X = b</p>
+			<hr>
+			<br>
+			<center>
+				<label>Entrez la taille de la matrice :</label><br>
+				<input type="text" maxlength="4" size="4" id="matrix-size" class="form-control">
+				<br><br>
+				<button class="btn btn-success" id="nextBtn" disabled onclick="toStep2()" >
+					suivant&nbsp;
+					<i class="fas fa-fast-forward"></i>
+				</button>
+			</center>
+		</div>
+		<div id="step2" class="step">
+			<p>Entrez les valeurs des matrices A et b:</p><br>
+			<center>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-2"></div>
+						<div class="col-md-4">
+							<h5>la matrice A:</h5><br>
+							<center>
+								<div id="matrixA"></div>
+							</center>
+						</div>
+						<div class="col-md-3">
+							<h5>la matrice B:</h5><br>
+							<center>
+								<div id="matrixB"></div>
+							</center>
+						</div>
+						<div class="col-md-3"></div>
+					</div>
+				</div><br><br>
+				<button class="btn btn-success" onclick="toStep3();cholsky()">
+					<i class="far fa-calendar-check"></i>
+					&nbsp;Appliquer l'algorithme
+				</button>
+				<button class="btn btn-info" onclick="location.reload()">
+					<i class="fas fa-home"></i>
+					&nbsp;Réessayer
+				</button>
+			</center>
+		</div>
+		<div id="step3" class="step">
+			<br><br>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4" id="one">
+						<h3>La matrice A :</h3>
+						<ul id="modifier">
+							<li>est définie positive</li>
+							<li>est symétrique</li>
+						</ul>
+					</div>
+					<div class="col-md-4" style="font-size: 70px" id="two">
+						<i class="fas fa-arrow-right"></i>
+					</div>
+					<div class="col-md-4" id="three">
+						<br>
+						<div class="alert alert-success">
+						  On peut résoudre le système.
+						</div>
+					</div>
+				</div>
+			</div>
+			<br><br>
+			<div class="btns">
+				<center>
+					<button class="btn btn-success" onclick="toStep4();setvalues()">
+						<i class="far fa-calendar-check"></i>
+						&nbsp;Résoudre le système
+					</button>
+					<button class="btn btn-info" onclick="location.reload()">
+						<i class="fas fa-home"></i>
+						&nbsp;Réessayer
+					</button>
+				</center>
+			</div>
+		</div>
+		<div class="step" id="step4">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4" id="sol1">
+						<h3>la matrice R:</h3><br>
+						<center>
+							<div id="matrixR"></div>
+						</center>
+					</div>
+					<div class="col-md-4" id="sol2">
+						<h3>la matrice Rt:</h3><br>
+						<center>
+							<div id="matrixRt"></div>
+						</center>
+					</div>
+					<div class="col-md-4" id="sol3">
+						<h3>les solution:</h3><br>
+						<center>
+							<div id="sols"></div>
+						</center>
+					</div>
+				</div>
+			</div>
+			<br><br>
+			<div class="btns">
+				<center>
+					<button class="btn btn-info" onclick="location.reload()">
+						<i class="fas fa-home"></i>
+						&nbsp;Réessayer
+					</button>
+				</center>
+			</div>
+		</div>
+	</main>
+	<!-- importing needed scripts -->	
+	<!-- jQuery library -->
+	<script src="js/jquery.min.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- main js file -->
+	<script src="js/mains.js"></script>
+</body>
+
+</html>

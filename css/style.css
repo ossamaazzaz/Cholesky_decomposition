@@ -1,0 +1,147 @@
+:root {
+	/* Heading height variable*/
+	--heading-height: 15em;
+}
+
+body {
+	/*overflow-y: hidden;*/
+}
+
+header {
+	position: fixed;
+	width: 100%;
+	height: var(--heading-height);
+	z-index: 999999;
+}
+
+header::before {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 6em;
+	width: 100%;
+	height: calc(var(--heading-height) + 10em);
+	z-index: -1;
+	transform: skewY(-3.5deg);
+	background: 
+		linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+		url(../images/header.jpg) no-repeat center,
+		linear-gradient(#4e4376, #2b5876);
+	background-size: cover;
+	border-bottom: .4em solid #546de5;
+}
+
+h1 {
+	font-size: calc(2em + 2vw);
+	font-weight: 700;
+	letter-spacing: .01em;
+	padding: 2.5rem 0 0 2.5rem;
+	text-shadow: .022em .022em .022em #111;
+	color: #fff;
+}
+
+main {
+	padding: calc(var(--heading-height) ) 4em 0;
+	background-color: ;
+	height: 1000px;
+}
+p{
+	font-size: 40px;
+	line-height: 45px;
+	font-family: 'futura-pt', sans-serif;
+	font-style: italic;
+	font-weight: 400;
+	text-align: center;
+}
+hr{
+	 border-top: 3px dashed #2c3e50;
+}
+label{
+	font-size: 30px;
+	font-family: 'futura-pt', sans-serif;
+	font-weight: 400;
+}
+#matrix-size{
+	width: 70px;
+	height: 50px;
+	font-size: 40px;
+	text-align: center;
+	border-left: 0px;
+	border-right: 0px;
+	border-top: 0px;
+	border-bottom: 2px solid; 
+}
+#step2, #step3{
+	display: none;
+	padding: 0px;
+}
+table, tr, td{
+	border: 0px;
+
+}
+.matrix-case{
+	width: 60px;
+	height: 35px;
+	text-align: center;
+	border-left: 0px;
+	border-right: 0px;
+	border-top: 0px;
+	border-bottom: 2px solid;
+	font-size: 25px;
+}
+.edge-right{
+	border-right: 4px solid;
+	width: 10px;
+}
+.edge-left{
+	border-left: 4px solid;
+	width: 10px;
+}
+.edge-top{
+	border-top: 4px solid;
+}
+.edge-bottom{
+	border-bottom: 4px solid;
+}
+li{
+	font-size: 22px;
+	font-style: italic;	
+}
+.btn{
+	font-size: 20px;
+}
+.col-md-4{
+	text-align: center;
+}
+#one, #two, #three, .btns{
+	display: none;
+}
+#sol1, #sol2, #sol3{
+	display: none;
+}
+td{
+	font-size: 23px;
+}
+#matrixRt td{
+	padding: 8px;
+}
+#matrixR td{
+	padding: 8px;
+}
+#sols ul{
+	text-align: left;
+	margin-left: 80px;
+}
+@media only screen and (max-width: 700px){
+	#sols ul{
+		margin-left: 8px;
+	}
+	#matrixRt, #sols,{
+		margin-top: 30px;
+	}
+	.col-md-3, .col-md-4{
+		margin-top: 30px;
+	}
+}
+}
